@@ -3,26 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Page</title>
-    <link rel="stylesheet" href="style/interactive.css"> <!-- Tambahkan CSS sesuai keinginan -->
+    <title>Himalaya Journey</title>
+    <link rel="stylesheet" href="style/interactive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="content">
-        <h1>Selamat Datang di Halaman Interaktif!</h1>
-        <p>Ini adalah halaman kedua yang menampilkan konten interaktif.</p>
+        <h1>Happy Birthday, My Love</h1>
+        <p>Embark on this journey with me. Click to begin.</p>
         
-        <button id="surpriseButton">Klik aku untuk kejutan!</button>
+        <button id="startJourneyButton">Begin</button>
+
+        <!-- Mountain animation container -->
+        <div class="mountain-container">
+            <svg class="mountain" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="50,10 90,90 10,90" fill="#8c8c8c"/>
+                <polygon points="50,20 80,90 20,90" fill="#b0b0b0"/>
+            </svg>
+            <i class="fas fa-hiking hiker"></i>
+        </div>
         
-        <div id="surpriseMessage" style="display: none;">
-            <h2>Surprise! 🎉</h2>
-            <p>Semoga harimu menyenangkan!</p>
+        <!-- Lirik Lagu Muncul Bertahap -->
+        <div class="lyrics-container">
+            <p class="lyric line1 hidden">"Himalaya bahkan akan aku taklukkan"</p>
+            <p class="lyric line2 hidden">"Tanpa cahaya di kegelapan"</p>
+            <p class="lyric line3 hidden">"Berbalutkan pelita hatimu"</p>
+            <p class="lyric line4 hidden">"Di aku, di aku dan kamu"</p>
+            <p class="lyric line5 hidden">"Pastikan kau melihat aku"</p>
+            <p class="lyric line6 hidden">"Saat kugapai puncak tertinggi"</p>
+            <p class="lyric line7 hidden">"Bersama tujuh warna pelangi"</p>
+        </div>
+
+        <!-- Pesan akhir yang elegan -->
+        <div id="finalMessage" class="hidden">
+            <h2>Thank You for Being Here</h2>
+            <p>Selamat ulang tahun, sayang. Semoga kita bisa terus mendaki bersama, menghadapi segala tantangan, dan menikmati setiap momen di puncak. 💫</p>
         </div>
     </div>
 
     <script>
-        // Script untuk membuat halaman ini interaktif
-        document.getElementById("surpriseButton").addEventListener("click", function() {
-            document.getElementById("surpriseMessage").style.display = "block";
+        // JavaScript untuk animasi dan pengaturan tampilan bertahap
+        document.getElementById("startJourneyButton").addEventListener("click", function() {
+            document.querySelector(".hiker").classList.add("animate-hiker");
+
+            // Tampilkan lirik secara bertahap
+            setTimeout(() => { document.querySelector(".line1").classList.add("show"); }, 1000);
+            setTimeout(() => { document.querySelector(".line2").classList.add("show"); }, 3000);
+            setTimeout(() => { document.querySelector(".line3").classList.add("show"); }, 5000);
+            setTimeout(() => { document.querySelector(".line4").classList.add("show"); }, 7000);
+            setTimeout(() => { document.querySelector(".line5").classList.add("show"); }, 9000);
+            setTimeout(() => { document.querySelector(".line6").classList.add("show"); }, 11000);
+            setTimeout(() => { document.querySelector(".line7").classList.add("show"); }, 13000);
+
+            // Tampilkan pesan akhir setelah semua lirik selesai
+            setTimeout(() => {
+                document.getElementById("finalMessage").classList.add("show");
+            }, 15000);
         });
     </script>
 </body>
