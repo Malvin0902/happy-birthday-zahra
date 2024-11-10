@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Page</title>
+    <link rel="stylesheet" href="style/interactive.css"> <!-- Tambahkan CSS sesuai keinginan -->
+</head>
+<body>
+    <div class="content">
+        <h1>Selamat Datang di Halaman Interaktif!</h1>
+        <p>Ini adalah halaman kedua yang menampilkan konten interaktif.</p>
+        
+        <button id="surpriseButton">Klik aku untuk kejutan!</button>
+        
+        <div id="surpriseMessage" style="display: none;">
+            <h2>Surprise! 🎉</h2>
+            <p>Semoga harimu menyenangkan!</p>
+        </div>
+    </div>
+
+    <script>
+        // Script untuk membuat halaman ini interaktif
+        document.getElementById("surpriseButton").addEventListener("click", function() {
+            document.getElementById("surpriseMessage").style.display = "block";
+        });
+    </script>
+</body>
+</html>
